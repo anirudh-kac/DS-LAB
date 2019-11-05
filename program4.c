@@ -89,5 +89,6 @@ void convert(char in[],char post[])
     }
     while(stack[top]!='#')
         post[j++] = pop();
+        
     post[j]= '\0';
 }
