@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int a[10][10],n,m,i,j,source,s[10],b[10],vis[10];
+int a[10][10],n,m,i,j,source,s[10]={0},b[10]={0},vis[10]={0};
 
 void create()
 {
@@ -20,6 +20,7 @@ void bfs()
     int q[10],u,front=0,rear=-1;
     printf("Enter source vertex \n");
     scanf("%d",&source);
+    q[++rear]=source;
     vis[source]=1;
     printf("The reachable vertices are : \n");
     while(front<=rear)
@@ -31,7 +32,7 @@ void bfs()
             {
                 q[++rear]=j;
                 vis[j]=1;
-                printf("\n %d",i);
+                printf("\t %d",j);
             }
         }
     }
@@ -39,8 +40,7 @@ void bfs()
 
 void dfs(int source)
 {
-    int v,top=-1;
-    s[++top]= source;
+    int v;
     b[source]=1;
     for(v=1;v<=n;v++)
     {

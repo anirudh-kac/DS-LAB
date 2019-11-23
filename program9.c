@@ -56,7 +56,7 @@ void print_poly(struct node *p)
     struct node* po =p->next;
     while(po!=p)
     {
-        printf("%dx^%dy^%dz^%d",po->coeff,po->exp[0],po->exp[1],po->exp[1]);
+        printf("%dx^%dy^%dz^%d",po->coeff,po->exp[0],po->exp[1],po->exp[2]);
         if(po->next!=p)
             printf(" + ");
         po=po->next;
@@ -100,7 +100,7 @@ struct node* add(struct node *p1,struct node* p2)
             }
             if(flag==0)
             {
-                temp = add_term(temp,t1->coeff+t2->coeff,t1->exp[0]+t2->exp[0],t1->exp[1]+t2->exp[1],t1->exp[2]+t2->exp[2]);
+                temp = add_term(temp,t1->coeff+t2->coeff,t1->exp[0],t1->exp[1],t1->exp[2]);
                 break;
             }
             t2 = t2->next;
