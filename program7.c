@@ -73,6 +73,18 @@ void deleteEnd()
     struct node* t;
     if(head==NULL)
         printf("Linked List is Empty\n");
+    else if(head->link==NULL)
+    {
+        temp=head;
+        printf("The deleted node is \n");
+        printf("USN = %s\n",temp->USN);
+        printf("Name = %s\n",temp->name);
+        printf("Sem = %s\n",temp->sem);
+        printf("Branch = %s\n",temp->branch);
+        printf("Phone = %s\n",temp->phone);
+        free(temp);
+        head=NULL;
+    }
     else
     {
         while(temp->link!=NULL)
@@ -89,7 +101,6 @@ void deleteEnd()
         free(t->link);
         t->link = NULL;
     }
-    
 
 }
 
